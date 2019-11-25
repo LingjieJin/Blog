@@ -1,7 +1,6 @@
 # 获取当前Linux系统的信息
 
-## 
-```
+```bash
 # 使用`uname -a`获取电脑和操作系统信息
 Linux raspberrypi 4.19.57-v7l+ #1244 SMP Thu Jul 4 18:48:07 BST 2019 armv7l GNU/Linux
 

@@ -98,53 +98,6 @@ For more examples and ideas, visit:
 
 ```
 
-## 3. Docker指令
-
-```bash
-#查看 Docker 版本
-docker -v
-Docker version 19.03.5, build 633a0ea
-
-#
-sudo docker pull 仓库/镜像:版本 (留空的话默认为 latest)
-sudo docker run 加参数，用来创建容器
-
-#查看运行容器
-sudo docker ps
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
-46c5e09150b3        ubuntu              "bash -c 'while true…"   3 hours ago         Up 3 hours                              nostalgic_lewin
-
-#查看所有下载的镜像
-sudo docker images
-REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
-ubuntu                latest              f576a39bda44        3 weeks ago         46.7MB
-arm32v7/hello-world   latest              618e43431df9        10 months ago       1.64kB
-
-#进入容器终端
-sudo docker exec -i -t ha /bin/bash
-
-#实时查看10行的 ha 日志
-sudo docker logs -f -t --tail 10 ha
-
-#重启 systemctl 守护进程
-sudo systemctl daemon-reload
-
-#设置 Docker 开机启动
-sudo systemctl enable docker
-
-#开启 Docker 服务
-sudo systemctl start docker
-
-#下载 Docker 图形化界面 portainer
-sudo docker pull portainer/portainer
-
-#创建 portainer 容器
-sudo docker volume create portainer_data
-
-#运行 portainer
-sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
-```
-
 ## 4.Example
 
 ### 1. Hello World
@@ -185,5 +138,64 @@ Linux version 4.19.75-v7+ (dom@buildbot) (gcc version 4.9.3 (crosstool-NG crosst
 # ls
 root@94c7fc5e05f4:/# ls
 bin  boot  dev  etc  home  lib  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+
+```
+
+### 3. 后台启动docker
+
+```bash
+root@raspi3b-1:/home/pi# docker run -d ubuntu /bin/sh -c "while true; do echo hello world; sleep 1; done"
+640208323e8aa10a5f97cec9bd2ccae85a30f3b6a3f979e1fd406eb79b1d8374
+
+这个长字符串叫做容器 ID，对每个容器来说都是唯一的，我们可以通过容器 ID 来查看对应的容器发生了什么
+首先，我们需要确认容器有在运行，可以通过 docker ps 来查看
+
+root@raspi3b-1:/home/pi# docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+640208323e8a        ubuntu              "/bin/sh -c 'while t…"   46 seconds ago      Up 43 seconds                           recursing_neumann
+
+输出详情介绍：
+
+CONTAINER ID: 容器 ID。
+
+IMAGE: 使用的镜像。
+
+COMMAND: 启动容器时运行的命令。
+
+CREATED: 容器的创建时间。
+
+STATUS: 容器状态。
+
+状态有7种：
+
+created（已创建）
+restarting（重启中）
+running（运行中）
+removing（迁移中）
+paused（暂停）
+exited（停止）
+dead（死亡）
+PORTS: 容器的端口信息和使用的连接类型（tcp\udp）。
+
+NAMES: 自动分配的容器名称。
+
+在容器内使用 docker logs 命令，查看容器内的标准输出：
+root@raspi3b-1:/home/pi# docker logs 640208323e8a
+hello world
+hello world
+hello world
+hello world
+hello world
+
+```
+
+### 4.停止容器
+
+```bash
+
+root@raspi3b-1:/home/pi# docker stop 640208323e8a
+640208323e8a
+root@raspi3b-1:/home/pi# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 
 ```
