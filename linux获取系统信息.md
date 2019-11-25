@@ -17,4 +17,6 @@ Distributor ID: Raspbian
 Description:    Raspbian GNU/Linux 10 (buster)
 Release:        10
 Codename:       buster
+
+# Linux查看cpu相关信息，包括型号、主频、内核信息等 cat /etc/cpuinfo
 ```
