@@ -1,6 +1,15 @@
+ref：https://www.jianshu.com/p/246b844f4449
+
 # Mac下安装zsh以及配置
 
 # 安装zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+卸载oh-my-zsh命令：uninstall_oh_my_zsh
+
+或者使用homebrew安装
+brew install zsh
+
 
 
 # 配置zsh
@@ -38,6 +47,33 @@ alias ip="curl ip.cn"
 ```
 source ~/.zshrc
 
+# 基础配置
+## 主题
+安装成功后，用vim打开隐藏文件 .zshrc ，修改主题为 agnoster：
+ZSH_THEME="agnoster"
+
+## 安装powerline
+先安装pip
+sudo easy_install pip
+再安装Powerline
+pip install powerline-status
+
+## 安装meslo字体
+应用这个主题需要特殊的字体支持，否则会出现乱码情况，这时我们来配置字体：
+安装 Meslo 字体库。
+方法1、可以直接复制下面命令到终端中安装：
+```
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+```
+应用字体到iTerm2下，我自己喜欢将字号设置为16px，看着舒服（iTerm -> Preferences -> Profiles -> Text -> Change Font）
+重新打开iTerm2窗口，这时便可以看到效果了
 
 # 配置插件
 切入扩展目录
@@ -71,3 +107,32 @@ vim zsh-autosuggestions.zsh
 
 # 执行修改
 source ~/.zshrc
+
+
+# 使用homebrew安装语法高亮
+brew install zsh-syntax-highlighting
+
+配置.zshrc文件，插入一行。
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source ~/.zshrc
+
+
+# 安装coreutils
+brew install coreutils
+
+# 安装自动补全插件incr
+incr地址：https://mimosa-pudica.net/zsh-incremental.html
+cd ~/.oh-my-zsh/plugins/
+mkdir -p incr
+cd incr
+touch incr-0.2.zsh（将上面链接中的代码复制粘贴到incr-0.2.zsh文件中）
+chmod 777 incr-0.2.zsh
+
+## 配置.zshrc文件
+ vim ~/.zshrc
+ source ~/.oh-my-zsh/plugins/incr/incr*.zsh
+ source ~/.zshrc 
+
+
+
