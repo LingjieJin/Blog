@@ -13,6 +13,11 @@ iTerm2->Preferences->Profiles->Color选择Color Presets->import
 到下载好的主题目录下schemes目录下选择你要的主题导入
 导入之后别忘记设置成你要的主题。
 
+区分目录和文件的颜色设置:
+
+Preferences -> Profiles -> Text -> Text Rendering 把 Draw bold text in bright colors 前面的勾去掉，
+文件和目录可以很容易区分了……
+
 # bash终端设置和ls配色
 终端输入vim ~/.bash_profile
 添加如下export
