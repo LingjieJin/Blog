@@ -17,11 +17,6 @@ brew install zsh
 # 别名配置
 vim ~/.zshrc
 ```
-# For server
-#alias weiyidev = "ssh weiyidev"
-#alias studytime = "ssh studytime"
-
-
 # For git
 alias gs="git status"
 alias ga='git add'
