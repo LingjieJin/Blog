@@ -10,6 +10,11 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 或者使用homebrew安装
 brew install zsh
 
+或者从git上安装：
+```
+curl -Lo install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+sh install.sh
+```
 
 
 # 配置zsh
