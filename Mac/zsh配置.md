@@ -128,6 +128,15 @@ chmod 777 incr-0.2.zsh
  vim ~/.zshrc
  source ~/.oh-my-zsh/plugins/incr/incr*.zsh
  source ~/.zshrc 
+ 
+# 隐藏用户名
+在zshrc中添加该字段：
+
+DEFAULT_USER="用户名"
+
+用户名指当前电脑用户，可以用whoami查看
+
+
 
 
 
