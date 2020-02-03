@@ -3,11 +3,17 @@ ref：https://iterm2.com
 
 或者使用homebrew下载
 
- brew cask install iterm2
+brew cask install iterm2
+
+# 设置背景图
+打开 Preferences 配置界面Profiles -> Window->Background mage,选择一张自己喜欢的背景图.
 
 # iterm2 配色链接
 ref：https://github.com/mbadolato/iTerm2-Color-Schemes
+
 ref: https://iterm2colorschemes.com/
+
+ref：https://ethanschoonover.com/solarized/
 
 schemes 是配色方案所在的文件夹
 
