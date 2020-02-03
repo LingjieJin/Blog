@@ -108,3 +108,7 @@ export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\W\[\033[01;31m\]$(g
 export TERM=xterm-256color
 ```
 
+保存退出就可以了。为了确保下次开机命令依然有效，执行如下命令：
+```
+echo "[ -r ~/.bashrc ] && source ~/.bashrc" >> .bash_profile
+```
