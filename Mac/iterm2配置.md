@@ -1,6 +1,10 @@
 # iterm2 下载
 ref：https://iterm2.com
 
+或者使用homebrew下载
+
+ brew cask install iterm2
+
 # iterm2 配色链接
 ref：https://github.com/mbadolato/iTerm2-Color-Schemes
 ref: https://iterm2colorschemes.com/
