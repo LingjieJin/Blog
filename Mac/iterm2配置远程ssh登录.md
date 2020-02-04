@@ -4,6 +4,7 @@
 ```
 #!/usr/bin/expect
 
+set timeout 100
 set PORT 22
 set HOST ***.***.***.***
 set USER root
@@ -26,3 +27,10 @@ interact
 2. 增加配置文件
 选择Command 在输入框中输入
 expect+刚才建的文件路径
+
+# 原理
+当前网上有许多的不同方式实现，根本上还是利用expect解析执行脚本内容
+```
+expect是一个自动交互功能的工具。
+expect是开了一个子进程，通过spawn来执行shell脚本，监测到脚本的返回结果，通过expect判断要进行的交互输入内容（send）
+```
