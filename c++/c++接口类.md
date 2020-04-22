@@ -31,3 +31,4 @@ c). 在C++11中也可以用：  virtual ~Testable() = default; 替代 virtual ~
 > public:
 >     virtual ~Testable() = 0 {}; // #5
 > };
+只要对纯虚析构函数提供一个默认实现就可以了。这种对纯虚函数提供实现的写法看似很奇怪，但C++的确是支持的。
