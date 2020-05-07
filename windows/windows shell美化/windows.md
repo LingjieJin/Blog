@@ -81,6 +81,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 
 choco install ConEmu
 
+2.1 ConEmu设置请参考
+
+[ConEmu设置](https://blog.csdn.net/Akilarex/article/details/89283304?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1)
+
 ### 下载Powerline字体
 
 ```
