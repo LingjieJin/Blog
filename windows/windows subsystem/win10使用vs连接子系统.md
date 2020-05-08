@@ -1,7 +1,5 @@
 # Win10
 
-***************
-
 ## windows子系统linux（Ubuntu）开启ssh服务
 
 建议使用netstat -lnp | grep 22，检查 子系统是否在监听22端口
